@@ -66,6 +66,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let data = UserDefaults.standard.data(forKey: key)
         if data != nil {
             guard let registerData = try? jsonDecoder.decode(HealthData.self, from: data!) else {
+                alertShow(content: "既存データ読み取り時にエラーが発生しました。")
                 return
             }
             if registerData.eat != nil {
@@ -104,6 +105,12 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     // エラーを表示
+    func alertShow(content: String) {
+        let alert = UIAlertController(title: "エラー", message: content, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+    }
     
     // ピッカー系の処理
     // 縦列の並び
