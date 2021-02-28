@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Run View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RunViewController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dj-Tx-s13">
-                                <rect key="frame" x="20" y="577" width="374" height="34"/>
+                                <rect key="frame" x="20" y="621" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-KJ-WgO">
                                         <rect key="frame" x="0.0" y="7" width="120" height="20.5"/>
@@ -37,7 +37,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJI-9r-teU">
-                                <rect key="frame" x="20" y="621" width="374" height="34"/>
+                                <rect key="frame" x="20" y="665" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="運動内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SH-dV-bYo">
                                         <rect key="frame" x="0.0" y="7" width="120" height="20.5"/>
@@ -56,7 +56,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsG-rV-tKG">
-                                <rect key="frame" x="20" y="665" width="374" height="34"/>
+                                <rect key="frame" x="20" y="709" width="374" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カロリー(仮)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXt-K3-im2">
                                         <rect key="frame" x="0.0" y="7" width="120" height="20.5"/>
@@ -74,31 +74,12 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-Gk-nHj">
-                                <rect key="frame" x="20" y="709" width="374" height="34"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間(h)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1M-Tk-Otv">
-                                        <rect key="frame" x="0.0" y="7" width="120" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="uOc-4A-43Y"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-bX-Wa4">
-                                        <rect key="frame" x="128" y="0.0" width="246" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUO-WW-Kkv">
                                 <rect key="frame" x="191.5" y="763" width="31" height="30"/>
                                 <state key="normal" title="登録"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akz-kz-BHV">
-                                <rect key="frame" x="20" y="133.5" width="374" height="363"/>
+                                <rect key="frame" x="20" y="133.5" width="374" height="407"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の運動" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBO-NI-0BM">
@@ -108,7 +89,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOH-k9-gVE">
-                                <rect key="frame" x="20" y="536.5" width="35" height="20.5"/>
+                                <rect key="frame" x="20" y="580.5" width="35" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -118,8 +99,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EBO-NI-0BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6AH-oY-Plo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Zz-Gk-nHj" secondAttribute="trailing" constant="20" id="8R2-yp-gPI"/>
-                            <constraint firstItem="4Zz-Gk-nHj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AcL-P8-PM4"/>
+                            <constraint firstItem="pUO-WW-Kkv" firstAttribute="top" secondItem="bsG-rV-tKG" secondAttribute="bottom" constant="20" id="9UU-ZP-MAQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2dj-Tx-s13" secondAttribute="trailing" constant="20" id="BjD-5X-Xvo"/>
                             <constraint firstItem="OOH-k9-gVE" firstAttribute="top" secondItem="akz-kz-BHV" secondAttribute="bottom" constant="40" id="DWB-3b-aTJ"/>
                             <constraint firstItem="2dj-Tx-s13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Frh-lC-f51"/>
@@ -132,9 +112,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bsG-rV-tKG" secondAttribute="trailing" constant="20" id="dK8-hb-QOH"/>
                             <constraint firstItem="bsG-rV-tKG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fcN-Ic-hnO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xJI-9r-teU" secondAttribute="trailing" constant="20" id="ght-WK-dQ2"/>
-                            <constraint firstItem="4Zz-Gk-nHj" firstAttribute="top" secondItem="bsG-rV-tKG" secondAttribute="bottom" constant="10" id="hMw-rZ-ChC"/>
                             <constraint firstItem="2dj-Tx-s13" firstAttribute="top" secondItem="OOH-k9-gVE" secondAttribute="bottom" constant="20" id="hmV-u7-uaK"/>
-                            <constraint firstItem="pUO-WW-Kkv" firstAttribute="top" secondItem="4Zz-Gk-nHj" secondAttribute="bottom" constant="20" id="jUz-g3-qkz"/>
                             <constraint firstItem="xJI-9r-teU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kcs-4G-XRI"/>
                             <constraint firstItem="akz-kz-BHV" firstAttribute="top" secondItem="EBO-NI-0BM" secondAttribute="bottom" constant="5" id="svm-UM-hrg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pUO-WW-Kkv" secondAttribute="bottom" constant="20" id="wuH-ug-vty"/>
@@ -147,46 +125,50 @@
             </objects>
             <point key="canvasLocation" x="3355.072463768116" y="832.36607142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Bja-eJ-eVv">
             <objects>
-                <viewController id="b8F-Z2-Uum" sceneMemberID="viewController">
+                <viewController id="b8F-Z2-Uum" customClass="HomeViewController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1fi-bK-UsW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oZ1-cZ-TwE">
+                                <rect key="frame" x="159" y="285" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXk-Yd-5Ph">
+                                <rect key="frame" x="159" y="431" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="swP-tf-U1M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="wh2-ch-ubM"/>
+                    <connections>
+                        <outlet property="textField" destination="oZ1-cZ-TwE" id="Meh-OP-vE4"/>
+                        <outlet property="textField2" destination="PXk-Yd-5Ph" id="PVN-CE-0uZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtx-aZ-LbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3355.072463768116" y="-672.32142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Eat View Controller-->
         <scene sceneID="v6d-gT-RJS">
             <objects>
-                <viewController id="787-tf-bam" sceneMemberID="viewController">
+                <viewController id="787-tf-bam" customClass="EatViewController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zL1-IW-3r5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の食事" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVw-Hn-68p">
                                 <rect key="frame" x="20" y="108" width="87" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-pg-Nxv">
-                                <rect key="frame" x="191.5" y="763" width="31" height="30"/>
-                                <state key="normal" title="登録"/>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-DF-ijX">
-                                <rect key="frame" x="20" y="133.5" width="374" height="373"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-Qg-RNr">
-                                <rect key="frame" x="20" y="546.5" width="35" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -257,6 +239,23 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-pg-Nxv">
+                                <rect key="frame" x="191.5" y="763" width="31" height="30"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="register" destination="787-tf-bam" eventType="touchUpInside" id="zSE-z9-cZe"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-DF-ijX">
+                                <rect key="frame" x="20" y="133.5" width="374" height="373"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="記録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-Qg-RNr">
+                                <rect key="frame" x="20" y="546.5" width="35" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Caa-d1-4Fj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -286,6 +285,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x7W-8K-D9d"/>
+                    <connections>
+                        <outlet property="content" destination="gn1-uV-k5Q" id="b1r-Ck-Hnk"/>
+                        <outlet property="genre" destination="tiS-Lj-5cl" id="hGi-23-Oap"/>
+                        <outlet property="more" destination="ReY-46-cqG" id="McO-yX-YtD"/>
+                        <outlet property="type" destination="wAG-g8-oZf" id="Epo-tz-ysq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgw-NZ-Fn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,7 +299,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Fyx-2x-e2e">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2Yt-wv-rQq" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2Yt-wv-rQq" customClass="TabBarController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uWL-31-aiZ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -314,7 +319,7 @@
         <scene sceneID="UJd-j2-5fM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ju-dq-rvo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="q8P-aY-4jD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="q8P-aY-4jD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qjF-U6-c0G">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -333,7 +338,7 @@
         <scene sceneID="f5v-k0-xU3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JnP-Rp-X8c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eat" id="f1U-IZ-C8x"/>
+                    <tabBarItem key="tabBarItem" title="Eat" image="pizza" id="f1U-IZ-C8x"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="llW-sv-O5y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -352,7 +357,7 @@
         <scene sceneID="WRX-m9-4h5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uTE-oj-55u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Run" id="eyC-Sj-cR3"/>
+                    <tabBarItem key="tabBarItem" title="Run" image="run" id="eyC-Sj-cR3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qBI-p0-XP0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -369,6 +374,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="25" height="25"/>
+        <image name="pizza" width="25" height="25"/>
+        <image name="run" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

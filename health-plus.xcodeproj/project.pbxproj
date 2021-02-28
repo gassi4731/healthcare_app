@@ -13,6 +13,10 @@
 		75AD479525EB2700000B8DF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AD479325EB2700000B8DF1 /* Main.storyboard */; };
 		75AD479725EB2701000B8DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AD479625EB2701000B8DF1 /* Assets.xcassets */; };
 		75AD479A25EB2701000B8DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AD479825EB2701000B8DF1 /* LaunchScreen.storyboard */; };
+		75AD47A325EB5402000B8DF1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A225EB5402000B8DF1 /* TabBarController.swift */; };
+		75AD47A625EB5A9E000B8DF1 /* EatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A525EB5A9E000B8DF1 /* EatViewController.swift */; };
+		75AD47A925EB5AA7000B8DF1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */; };
+		75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		75AD479625EB2701000B8DF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75AD479925EB2701000B8DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75AD479B25EB2701000B8DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75AD47A225EB5402000B8DF1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		75AD47A525EB5A9E000B8DF1 /* EatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatViewController.swift; sourceTree = "<group>"; };
+		75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				75AD479625EB2701000B8DF1 /* Assets.xcassets */,
 				75AD479825EB2701000B8DF1 /* LaunchScreen.storyboard */,
 				75AD479B25EB2701000B8DF1 /* Info.plist */,
+				75AD47A225EB5402000B8DF1 /* TabBarController.swift */,
+				75AD47A525EB5A9E000B8DF1 /* EatViewController.swift */,
+				75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */,
+				75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */,
 			);
 			path = "health-plus";
 			sourceTree = "<group>";
@@ -138,7 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75AD479225EB2700000B8DF1 /* ViewController.swift in Sources */,
+				75AD47A625EB5A9E000B8DF1 /* EatViewController.swift in Sources */,
+				75AD47A325EB5402000B8DF1 /* TabBarController.swift in Sources */,
 				75AD478E25EB2700000B8DF1 /* AppDelegate.swift in Sources */,
+				75AD47A925EB5AA7000B8DF1 /* RunViewController.swift in Sources */,
+				75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */,
 				75AD479025EB2700000B8DF1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
