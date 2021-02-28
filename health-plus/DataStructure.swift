@@ -8,14 +8,12 @@
 import Foundation
 
 struct HealthData: Codable {
-    let date: Date
-    let eat: Array<EatData>
-    let run: Array<RunData>
-    let name: String?
-    let description: String?
+    let eat: Array<EatData>?
+    let run: Array<RunData>?
 }
 
 struct EatData: Codable {
+    let type: String
     let genre: String
     let content: String
     let more: String

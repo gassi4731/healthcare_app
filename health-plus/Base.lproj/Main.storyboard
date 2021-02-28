@@ -245,6 +245,9 @@
                                     <segment title="夕食"/>
                                     <segment title="その他"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentChangedWithSender:" destination="787-tf-bam" eventType="valueChanged" id="hgr-pB-RBG"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleAspectFit" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4p-rX-3P1">
                                 <rect key="frame" x="20" y="621" width="374" height="34"/>
