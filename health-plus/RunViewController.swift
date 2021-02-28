@@ -11,7 +11,7 @@ class RunViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "運動を記録"
         // Do any additional setup after loading the view.
     }
     

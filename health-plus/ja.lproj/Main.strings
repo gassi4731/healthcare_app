@@ -1,0 +1,69 @@
+
+/* Class = "UILabel"; text = "運動内容"; ObjectID = "0SH-dV-bYo"; */
+"0SH-dV-bYo.text" = "運動内容";
+
+/* Class = "UILabel"; text = "ジャンル"; ObjectID = "1ey-0p-M6P"; */
+"1ey-0p-M6P.text" = "ジャンル";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3de-iU-2PU"; */
+"3de-iU-2PU.text" = "Label";
+
+/* Class = "UILabel"; text = "カロリー(仮)"; ObjectID = "E7O-1Z-XGd"; */
+"E7O-1Z-XGd.text" = "カロリー(仮)";
+
+/* Class = "UILabel"; text = "今日の運動"; ObjectID = "EBO-NI-0BM"; */
+"EBO-NI-0BM.text" = "今日の運動";
+
+/* Class = "UIButton"; normalTitle = "update(普通の追加)"; ObjectID = "NTY-Nf-N6N"; */
+"NTY-Nf-N6N.normalTitle" = "update(普通の追加)";
+
+/* Class = "UILabel"; text = "記録"; ObjectID = "OOH-k9-gVE"; */
+"OOH-k9-gVE.text" = "記録";
+
+/* Class = "UILabel"; text = "今日の食事"; ObjectID = "VVw-Hn-68p"; */
+"VVw-Hn-68p.text" = "今日の食事";
+
+/* Class = "UILabel"; text = "記録"; ObjectID = "aD6-Qg-RNr"; */
+"aD6-Qg-RNr.text" = "記録";
+
+/* Class = "UIButton"; normalTitle = "登録"; ObjectID = "dAZ-pg-Nxv"; */
+"dAZ-pg-Nxv.normalTitle" = "登録";
+
+/* Class = "UILabel"; text = "カロリー(仮)"; ObjectID = "dXt-K3-im2"; */
+"dXt-K3-im2.text" = "カロリー(仮)";
+
+/* Class = "UITabBarItem"; title = "Run"; ObjectID = "eyC-Sj-cR3"; */
+"eyC-Sj-cR3.title" = "Run";
+
+/* Class = "UITabBarItem"; title = "Eat"; ObjectID = "f1U-IZ-C8x"; */
+"f1U-IZ-C8x.title" = "Eat";
+
+/* Class = "UILabel"; text = "ジャンル"; ObjectID = "gVu-KJ-WgO"; */
+"gVu-KJ-WgO.text" = "ジャンル";
+
+/* Class = "UIButton"; normalTitle = "set"; ObjectID = "h69-Ku-7lv"; */
+"h69-Ku-7lv.normalTitle" = "set";
+
+/* Class = "UIButton"; normalTitle = "Button(新規追加)"; ObjectID = "nIQ-7W-nXr"; */
+"nIQ-7W-nXr.normalTitle" = "Button(新規追加)";
+
+/* Class = "UIButton"; normalTitle = "登録"; ObjectID = "pUO-WW-Kkv"; */
+"pUO-WW-Kkv.normalTitle" = "登録";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "q8P-aY-4jD"; */
+"q8P-aY-4jD.title" = "Home";
+
+/* Class = "UISegmentedControl"; wAG-g8-oZf.segmentTitles[0] = "朝食"; ObjectID = "wAG-g8-oZf"; */
+"wAG-g8-oZf.segmentTitles[0]" = "朝食";
+
+/* Class = "UISegmentedControl"; wAG-g8-oZf.segmentTitles[1] = "昼食"; ObjectID = "wAG-g8-oZf"; */
+"wAG-g8-oZf.segmentTitles[1]" = "昼食";
+
+/* Class = "UISegmentedControl"; wAG-g8-oZf.segmentTitles[2] = "夕食"; ObjectID = "wAG-g8-oZf"; */
+"wAG-g8-oZf.segmentTitles[2]" = "夕食";
+
+/* Class = "UISegmentedControl"; wAG-g8-oZf.segmentTitles[3] = "その他"; ObjectID = "wAG-g8-oZf"; */
+"wAG-g8-oZf.segmentTitles[3]" = "その他";
+
+/* Class = "UILabel"; text = "食事内容"; ObjectID = "yWd-uh-nWw"; */
+"yWd-uh-nWw.text" = "食事内容";

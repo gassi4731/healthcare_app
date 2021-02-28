@@ -24,6 +24,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "食事を記録"
         createPickerView()
         // Do any additional setup after loading the view.
     }
@@ -74,7 +75,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         // toolbar
         let toolbar = UIToolbar()
         toolbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
-        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(HomeViewController.donePicker))
+        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(EatViewController.donePicker))
         toolbar.setItems([doneButtonItem], animated: true)
         genre.inputAccessoryView = toolbar
         content.inputAccessoryView = toolbar
