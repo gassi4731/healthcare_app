@@ -20,7 +20,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var contentPickerView = UIPickerView()
     var morePickerView = UIPickerView()
     
-    var typeText: String = "朝食"
+    var typeText: String!
     
     var eatViewData: Array<EatData> = []
     
@@ -38,23 +38,26 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         eatViewData.append(EatData(type: "朝食", genre: "ごはん", content: "ごはん", more: "", cal: 100))
         eatViewData.append(EatData(type: "昼食", genre: "うどん", content: "うどん", more: "", cal: 100))
         
+        updateEatTable()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func register() {
-        let genreText = genre.text ?? nil
-        let contentText = content.text ?? nil
-        let moreText = more.text ?? nil
+        let genreText: String = genre.text ?? ""
+        let contentText: String = content.text ?? ""
+        let moreText: String = more.text ?? ""
         
+        print(genreText)
         // 数が全て入っていない場合は、エラーを表示する
-        if genreText == nil || contentText == nil || moreText == nil {
-            alertShow(content: "すべての入力が終わると登録ができます！")
+        if  genreText.isEmpty || contentText.isEmpty || moreText.isEmpty {
+            alertShow(title: "エラー", content: "すべての入力が終わると登録ができます！")
         } else {
             let calNum = 100 // カロリー計算をつくる
-            let eatData = EatData(type: typeText,genre: genreText!, content: contentText!, more: moreText!, cal: calNum)
+            let eatData = EatData(type: typeText,genre: genreText, content: contentText, more: moreText, cal: calNum)
             
-            print(eatData)
             update(eatData: eatData)
+            updateEatTable()
+            alertShow(title: "食事を記録しました", content: "食事の記録の記録に成功しました！！")
         }
     }
     
@@ -66,6 +69,12 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         typeText = type.titleForSegment(at: selectedIndex) ?? "朝食"
     }
     
+    // 入力内容初期化
+//    func inputInit() {
+//        typeText: String = "朝食"
+//        genre
+//    }
+    
     // UserDefaultの処理系
     func update(eatData: EatData) {
         let key = keyFromNowDate()
@@ -76,7 +85,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let data = UserDefaults.standard.data(forKey: key)
         if data != nil {
             guard let registerData = try? jsonDecoder.decode(HealthData.self, from: data!) else {
-                alertShow(content: "既存データ読み取り時にエラーが発生しました。")
+                alertShow(title: "エラー", content: "既存データ読み取り時にエラーが発生しました。")
                 return
             }
             if registerData.eat != nil {
@@ -114,9 +123,9 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         return nowSplitNum
     }
     
-    // エラーを表示
-    func alertShow(content: String) {
-        let alert = UIAlertController(title: "エラー", message: content, preferredStyle: .alert)
+    // アラートを表示
+    func alertShow(title: String, content: String) {
+        let alert = UIAlertController(title: title, message: content, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }))
@@ -139,17 +148,20 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         return cell
     }
     
-    
-//    func updateLabel() {
-//        let jsonDecoder = JSONDecoder()
-//        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-//        guard let data = UserDefaults.standard.data(forKey: "key"),
-//              let monster = try? jsonDecoder.decode(Sample.self, from: data) else {
-//            return
-//        }
-//        label.text = monster.name
-//        label2.text = monster.description
-//    }
+    func updateEatTable() {
+        eatViewData = []
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let data = UserDefaults.standard.data(forKey: keyFromNowDate()),
+              let healthData = try? jsonDecoder.decode(HealthData.self, from: data) else {
+            return
+        }
+        let eatData: Array<EatData> = healthData.eat ?? []
+        for eat in eatData {
+            eatViewData.append(eat)
+        }
+        self.eatTable.reloadData()
+    }
     
     // ピッカー系の処理
     // 縦列の並び
