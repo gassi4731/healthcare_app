@@ -20,7 +20,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var contentPickerView = UIPickerView()
     var morePickerView = UIPickerView()
     
-    var typeText: String!
+    var typeText: String = "朝食"
     
     var eatViewData: Array<EatData> = []
     
@@ -57,6 +57,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             
             update(eatData: eatData)
             updateEatTable()
+            inputInit()
             alertShow(title: "食事を記録しました", content: "食事の記録の記録に成功しました！！")
         }
     }
@@ -70,10 +71,11 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     // 入力内容初期化
-//    func inputInit() {
-//        typeText: String = "朝食"
-//        genre
-//    }
+    func inputInit() {
+        genre.text = ""
+        content.text = ""
+        more.text = ""
+    }
     
     // UserDefaultの処理系
     func update(eatData: EatData) {
