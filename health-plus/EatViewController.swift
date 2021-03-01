@@ -7,7 +7,9 @@
 
 import UIKit
 
-class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource {
+    
+    @IBOutlet weak var eatTable: UITableView!
     
     @IBOutlet weak var type: UISegmentedControl!
     @IBOutlet weak var genre: UITextField!
@@ -18,7 +20,9 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var contentPickerView = UIPickerView()
     var morePickerView = UIPickerView()
     
-    var typeText: String!
+    var typeText: String = "朝食"
+    
+    var eatViewData: Array<EatData> = []
     
     var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
     var contentData = ["sample1", "sample2", "sample3"]
@@ -27,7 +31,10 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "食事を記録"
+        
         createPickerView()
+        eatTable.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -37,23 +44,23 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let moreText = more.text ?? ""
         
         // 数が全て入っていない場合は、エラーを表示する
-        //        if genreText == "" && contentText == "" && moreText == "" {
-        //            // ここにエラーメッセージ
-        //            return
-        //        }
+        if genreText == "" && contentText == "" && moreText == "" {
+            // ここにエラーメッセージ
+            return
+        }
         let calNum = 100 // カロリー計算をつくる
         let eatData = EatData(type: typeText,genre: genreText, content: contentText, more: moreText, cal: calNum)
         
         print(eatData)
-        //        update(eatData: eatData)
+        update(eatData: eatData)
     }
     
+    //セグメントが変更されたときの処理
     @IBAction func segmentChanged(sender: AnyObject) {
-        //セグメントが変更されたときの処理
         //選択されているセグメントのインデックス
         let selectedIndex = type.selectedSegmentIndex
         //選択されたインデックスの文字列を取得してラベルに設定
-        typeText = type.titleForSegment(at: selectedIndex)
+        typeText = type.titleForSegment(at: selectedIndex) ?? "朝食"
     }
     
     // UserDefaultの処理系
@@ -110,6 +117,31 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }))
+    }
+    
+    // テーブル関連の処理
+    // セルの数を設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if eatViewData != nil {
+            return eatViewData.count
+        } else {
+            return 0
+        }
+    }
+    
+    // セルの中に表示
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EatTableViewCell", for: indexPath) as! EatTableViewCell
+        tableView.separatorInset = .zero
+        
+//        cell.setup(type: "a", content: "bb", cal: "10000")
+        if eatViewData != nil {
+            cell.setup(type: eatViewData[indexPath.row].type, content: eatViewData[indexPath.row].content, cal: String(eatViewData[indexPath.row].cal))
+        } else {
+            cell.setup(type: "", content: "", cal: "")
+        }
+        
+        return cell
     }
     
     // ピッカー系の処理
