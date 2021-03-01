@@ -35,24 +35,27 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         createPickerView()
         eatTable.dataSource = self
         
+        eatViewData.append(EatData(type: "朝食", genre: "ごはん", content: "ごはん", more: "", cal: 100))
+        eatViewData.append(EatData(type: "昼食", genre: "うどん", content: "うどん", more: "", cal: 100))
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func register() {
-        let genreText = genre.text ?? ""
-        let contentText = content.text ?? ""
-        let moreText = more.text ?? ""
+        let genreText = genre.text ?? nil
+        let contentText = content.text ?? nil
+        let moreText = more.text ?? nil
         
         // 数が全て入っていない場合は、エラーを表示する
-        if genreText == "" && contentText == "" && moreText == "" {
-            // ここにエラーメッセージ
-            return
+        if genreText == nil || contentText == nil || moreText == nil {
+            alertShow(content: "すべての入力が終わると登録ができます！")
+        } else {
+            let calNum = 100 // カロリー計算をつくる
+            let eatData = EatData(type: typeText,genre: genreText!, content: contentText!, more: moreText!, cal: calNum)
+            
+            print(eatData)
+            update(eatData: eatData)
         }
-        let calNum = 100 // カロリー計算をつくる
-        let eatData = EatData(type: typeText,genre: genreText, content: contentText, more: moreText, cal: calNum)
-        
-        print(eatData)
-        update(eatData: eatData)
     }
     
     //セグメントが変更されたときの処理
@@ -117,6 +120,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }))
+        present(alert, animated: true, completion: nil)
     }
     
     // テーブル関連の処理
@@ -134,6 +138,18 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         return cell
     }
+    
+    
+//    func updateLabel() {
+//        let jsonDecoder = JSONDecoder()
+//        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+//        guard let data = UserDefaults.standard.data(forKey: "key"),
+//              let monster = try? jsonDecoder.decode(Sample.self, from: data) else {
+//            return
+//        }
+//        label.text = monster.name
+//        label2.text = monster.description
+//    }
     
     // ピッカー系の処理
     // 縦列の並び
