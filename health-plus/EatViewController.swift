@@ -122,11 +122,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     // テーブル関連の処理
     // セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if eatViewData != nil {
-            return eatViewData.count
-        } else {
-            return 0
-        }
+        return eatViewData.count
     }
     
     // セルの中に表示
@@ -134,12 +130,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "EatTableViewCell", for: indexPath) as! EatTableViewCell
         tableView.separatorInset = .zero
         
-//        cell.setup(type: "a", content: "bb", cal: "10000")
-        if eatViewData != nil {
-            cell.setup(type: eatViewData[indexPath.row].type, content: eatViewData[indexPath.row].content, cal: String(eatViewData[indexPath.row].cal))
-        } else {
-            cell.setup(type: "", content: "", cal: "")
-        }
+        cell.setup(type: eatViewData[indexPath.row].type, content: eatViewData[indexPath.row].content, cal: String(eatViewData[indexPath.row].cal))
         
         return cell
     }
