@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource {
+class EatViewController: UIViewController {
     
     @IBOutlet weak var eatTable: UITableView!
     
@@ -35,11 +35,17 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         createPickerView()
         eatTable.dataSource = self
         
+        genrePickerView.delegate = self
+        genrePickerView.dataSource = self
+        contentPickerView.delegate = self
+        contentPickerView.dataSource = self
+        morePickerView.delegate = self
+        morePickerView.dataSource = self
+        
         eatViewData.append(EatData(type: "朝食", genre: "ごはん", content: "ごはん", more: "", cal: 100))
         eatViewData.append(EatData(type: "昼食", genre: "うどん", content: "うどん", more: "", cal: 100))
         
         updateEatTable()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func register() {
@@ -47,7 +53,6 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let contentText: String = content.text ?? ""
         let moreText: String = more.text ?? ""
         
-        print(genreText)
         // 数が全て入っていない場合は、エラーを表示する
         if  genreText.isEmpty || contentText.isEmpty || moreText.isEmpty {
             alertShow(title: "エラー", content: "すべての入力が終わると登録ができます！")
@@ -133,8 +138,9 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }))
         present(alert, animated: true, completion: nil)
     }
-    
-    // テーブル関連の処理
+}
+
+extension EatViewController: UITableViewDataSource {
     // セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eatViewData.count
@@ -164,10 +170,11 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
         self.eatTable.reloadData()
     }
-    
-    // ピッカー系の処理
-    // 縦列の並び
-    func numberOfComponents(in genrePickerView: UIPickerView) -> Int {
+}
+
+extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    // ドラムロールの列数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
@@ -182,7 +189,7 @@ class EatViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-    // それぞれに値を代入
+    // ドラムロールの行数
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == genrePickerView {
             return genreData[row]
