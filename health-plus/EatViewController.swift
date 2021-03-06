@@ -60,7 +60,10 @@ class EatViewController: UIViewController {
             let calNum = 100 // カロリー計算をつくる
             let eatData = EatData(type: typeText,genre: genreText, content: contentText, more: moreText, cal: calNum)
             
-            update(eatData: eatData)
+            if !DataManager.update(key: keyFromNowDate(), eat: eatData, run: nil) {
+                alertShow(title: "エラー", content: "書き込みエラーが発生しました。")
+                return
+            }
             updateEatTable()
             inputInit()
             alertShow(title: "食事を記録しました", content: "食事の記録の記録に成功しました！！")
@@ -80,42 +83,6 @@ class EatViewController: UIViewController {
         genre.text = ""
         content.text = ""
         more.text = ""
-    }
-    
-    // UserDefaultの処理系
-    func update(eatData: EatData) {
-        let key = keyFromNowDate()
-        var eatArray: Array<EatData>
-        // UserDefaultから現在のデータを取得
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        let data = UserDefaults.standard.data(forKey: key)
-        if data != nil {
-            guard let registerData = try? jsonDecoder.decode(HealthData.self, from: data!) else {
-                alertShow(title: "エラー", content: "既存データ読み取り時にエラーが発生しました。")
-                return
-            }
-            if registerData.eat != nil {
-                eatArray = registerData.eat!
-                eatArray.append(eatData)
-            } else {
-                eatArray = [eatData]
-            }
-        } else {
-            eatArray = [eatData]
-        }
-        let health = HealthData(eat: eatArray, run: nil)
-        uploadUD(health: health, key: key)
-    }
-    
-    // UserDefaultにアップロード
-    func uploadUD(health: HealthData, key: String) {
-        let jsonEncoder = JSONEncoder()
-        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
-        guard let uploadData = try? jsonEncoder.encode(health) else {
-            return
-        }
-        UserDefaults.standard.set(uploadData, forKey: key)
     }
     
     // keyになる今日の日付を日付を返す
@@ -158,13 +125,7 @@ extension EatViewController: UITableViewDataSource {
     
     func updateEatTable() {
         eatViewData = []
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let data = UserDefaults.standard.data(forKey: keyFromNowDate()),
-              let healthData = try? jsonDecoder.decode(HealthData.self, from: data) else {
-            return
-        }
-        let eatData: Array<EatData> = healthData.eat ?? []
+        let eatData = DataManager.get(key: keyFromNowDate())?.eat ?? []
         for eat in eatData {
             eatViewData.append(eat)
         }

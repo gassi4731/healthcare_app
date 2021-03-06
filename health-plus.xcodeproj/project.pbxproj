@@ -20,6 +20,7 @@
 		75AD47A625EB5A9E000B8DF1 /* EatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A525EB5A9E000B8DF1 /* EatViewController.swift */; };
 		75AD47A925EB5AA7000B8DF1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */; };
 		75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */; };
+		75B9EB9125F36C4700309480 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9EB9025F36C4700309480 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		75AD47A525EB5A9E000B8DF1 /* EatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatViewController.swift; sourceTree = "<group>"; };
 		75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		75B9EB9025F36C4700309480 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				759A2EAD25EB7B9900850CA2 /* SampleData.swift */,
 				759A2EBE25EB90F800850CA2 /* DataStructure.swift */,
 				7529381925EC7CBB00B268E7 /* EatTableViewCell.swift */,
+				75B9EB9025F36C4700309480 /* DataManager.swift */,
 			);
 			path = "health-plus";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */,
 				7529381A25EC7CBB00B268E7 /* EatTableViewCell.swift in Sources */,
 				75AD479025EB2700000B8DF1 /* SceneDelegate.swift in Sources */,
+				75B9EB9125F36C4700309480 /* DataManager.swift in Sources */,
 				759A2EBF25EB90F800850CA2 /* DataStructure.swift in Sources */,
 				759A2EAE25EB7B9900850CA2 /* SampleData.swift in Sources */,
 			);

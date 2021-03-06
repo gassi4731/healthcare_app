@@ -8,8 +8,8 @@
 import Foundation
 
 struct HealthData: Codable {
-    let eat: Array<EatData>?
-    let run: Array<RunData>?
+    var eat: Array<EatData>?
+    var run: Array<RunData>?
 }
 
 struct EatData: Codable {
