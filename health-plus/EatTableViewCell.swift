@@ -9,13 +9,11 @@ import UIKit
 
 class EatTableViewCell: UITableViewCell {
 
-    @IBOutlet var typeLabel: UILabel!
-    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var typeAndContentLabel: UILabel!
     @IBOutlet var calLabel: UILabel!
     
-    func setup(type: String, content: String, cal: String) {
-        typeLabel.text = type
-        contentLabel.text = content
+    func setup(typeAndContent: String, cal: String) {
+        typeAndContentLabel.text = typeAndContent
         calLabel.text = cal
     }
     

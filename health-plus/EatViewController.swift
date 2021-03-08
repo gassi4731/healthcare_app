@@ -118,7 +118,9 @@ extension EatViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EatTableViewCell", for: indexPath) as! EatTableViewCell
         tableView.separatorInset = .zero
         
-        cell.setup(type: eatViewData[indexPath.row].type, content: eatViewData[indexPath.row].content, cal: String(eatViewData[indexPath.row].cal))
+        let typeAndContent = eatViewData[indexPath.row].content + " (" + eatViewData[indexPath.row].type + ")"
+        
+        cell.setup(typeAndContent: typeAndContent, cal: String(eatViewData[indexPath.row].cal))
         
         return cell
     }
