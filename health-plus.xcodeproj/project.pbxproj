@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7529381A25EC7CBB00B268E7 /* EatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529381925EC7CBB00B268E7 /* EatTableViewCell.swift */; };
+		7545D76825F684B100BD64AD /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7545D76725F684B100BD64AD /* CustomUITextField.swift */; };
 		759A2EAE25EB7B9900850CA2 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A2EAD25EB7B9900850CA2 /* SampleData.swift */; };
 		759A2EBF25EB90F800850CA2 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A2EBE25EB90F800850CA2 /* DataStructure.swift */; };
 		75AD478E25EB2700000B8DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD478D25EB2700000B8DF1 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7529381925EC7CBB00B268E7 /* EatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatTableViewCell.swift; sourceTree = "<group>"; };
+		7545D76725F684B100BD64AD /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		759A2EAD25EB7B9900850CA2 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		759A2EB325EB8A7F00850CA2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		759A2EB425EB8A7F00850CA2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				759A2EBE25EB90F800850CA2 /* DataStructure.swift */,
 				7529381925EC7CBB00B268E7 /* EatTableViewCell.swift */,
 				75B9EB9025F36C4700309480 /* DataManager.swift */,
+				7545D76725F684B100BD64AD /* CustomUITextField.swift */,
 			);
 			path = "health-plus";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				75AD47A625EB5A9E000B8DF1 /* EatViewController.swift in Sources */,
 				75AD47A325EB5402000B8DF1 /* TabBarController.swift in Sources */,
 				75AD478E25EB2700000B8DF1 /* AppDelegate.swift in Sources */,
+				7545D76825F684B100BD64AD /* CustomUITextField.swift in Sources */,
 				75AD47A925EB5AA7000B8DF1 /* RunViewController.swift in Sources */,
 				75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */,
 				7529381A25EC7CBB00B268E7 /* EatTableViewCell.swift in Sources */,

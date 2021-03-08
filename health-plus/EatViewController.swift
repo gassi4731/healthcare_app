@@ -24,7 +24,7 @@ class EatViewController: UIViewController {
     
     var eatViewData: Array<EatData> = []
     
-    var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
+//    var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
     var contentData = ["sample1", "sample2", "sample3"]
     var moreData = ["100", "200", "300"]
     
