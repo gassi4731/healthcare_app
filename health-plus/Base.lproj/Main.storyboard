@@ -499,7 +499,7 @@
         <image name="pizza" width="25.333333969116211" height="25.333333969116211"/>
         <image name="run" width="25.333333969116211" height="25.333333969116211"/>
         <namedColor name="MainColor">
-            <color red="0.10588235294117647" green="0.57647058823529407" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10599999874830246" green="0.57599997520446777" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

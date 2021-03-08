@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SwipeableTabBarController
 
-class TabBarController: UITabBarController {
+class TabBarController: SwipeableTabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = UIColor.red
+        swipeAnimatedTransitioning?.animationType = SwipeAnimationType.sideBySide
+        isCyclingEnabled = true
         // Do any additional setup after loading the view.
     }
     
