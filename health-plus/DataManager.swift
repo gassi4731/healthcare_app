@@ -20,11 +20,12 @@ class DataManager {
         return decodeData
     }
     
-    class func update(key: String, eat: EatData?, run: RunData?) -> Bool {
+    class func update(key: String, eat: EatData?, run: RunData?, task: Int?) -> Bool {
+        let registerData:HealthData = get(key: key) ?? HealthData(eat: nil, run: nil)
+        
         var eatArray: Array<EatData>
         var runArray: Array<RunData>
-        
-        let registerData:HealthData = get(key: key) ?? HealthData(eat: nil, run: nil)
+        var taskArray: Array<Int> = registerData.finishTask
         
         // 既に登録されているものを追加
         if registerData.eat != nil {
@@ -46,8 +47,11 @@ class DataManager {
         if run != nil {
             runArray.append(run!)
         }
+        if task != nil {
+            taskArray.append(task!)
+        }
         
-        return uploadDB(key: key, eatArray: eatArray, runArray: runArray)
+        return uploadDB(key: key, eatArray: eatArray, runArray: runArray, taskArray: taskArray)
     }
     
     class func delete(key: String, data: String, index: Int) {
@@ -56,24 +60,29 @@ class DataManager {
         }
         let eatArray: Array<EatData> = registerData.eat ?? []
         let runArray: Array<RunData> = registerData.run ?? []
+        let taskArray: Array<Int> = registerData.finishTask
         
         if data == "eat" {
             var editData: Array<EatData> = registerData.eat!
             editData.remove(at: index)
-            uploadDB(key: key, eatArray: editData, runArray: runArray)
+            uploadDB(key: key, eatArray: editData, runArray: runArray, taskArray: taskArray)
         } else if data == "run" {
             var editData: Array<RunData> = registerData.run!
             editData.remove(at: index)
-            uploadDB(key: key, eatArray: eatArray, runArray: editData)
+            uploadDB(key: key, eatArray: eatArray, runArray: editData, taskArray: taskArray)
+        } else if data == "task" {
+            var editData: Array<Int> = registerData.finishTask
+            editData.removeAll(where: { $0 == index})
+            uploadDB(key: key, eatArray: eatArray, runArray: runArray, taskArray: editData)
         }
         return
     }
     
-    class func uploadDB(key: String, eatArray: Array<EatData>, runArray: Array<RunData>) -> Bool {
+    class func uploadDB(key: String, eatArray: Array<EatData>, runArray: Array<RunData>, taskArray: Array<Int>) -> Bool {
         let jsonEncoder = JSONEncoder()
         jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
         // HealthDataに格納
-        let updateData = HealthData(eat: eatArray, run: runArray)
+        let updateData = HealthData(eat: eatArray, run: runArray, finishTask: taskArray)
         
         // UserDefaultにアップロード
         guard let encodeData = try? jsonEncoder.encode(updateData) else {

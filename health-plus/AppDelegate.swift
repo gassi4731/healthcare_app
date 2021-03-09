@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor = UIColor(named: "MainColor")
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 236.0/255.0, green: 254.0/255.0, blue: 234.0/255.0, alpha:1)]
+        if UserDefaults.standard.integer(forKey: "weight") == 0 {
+            UserDefaults.standard.set(45, forKey: "weight")
+        }
         return true
     }
 

@@ -15,24 +15,25 @@ class EatViewController: UIViewController {
     @IBOutlet weak var genre: UITextField!
     @IBOutlet weak var content: UITextField!
     
-    var genrePickerView = UIPickerView()
-    var contentPickerView = UIPickerView()
+    private var genrePickerView = UIPickerView()
+    private var contentPickerView = UIPickerView()
     
+    // 初期値
     var typeText: String = "朝食"
-    
     var eatViewData: Array<EatData> = []
+    var genreRow: Int!
+    var contentRow: Int!
     
-    //    var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
-    var contentData = ["sample1", "sample2", "sample3"]
-    var moreData = ["100", "200", "300"]
+    // 今日の日付をKeyにする
+    let key: String = Method.keyFromNowDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "食事を記録"
         
-        createPickerView()
         eatTable.dataSource = self
         
+        createPickerView()
         genrePickerView.delegate = self
         genrePickerView.dataSource = self
         contentPickerView.delegate = self
@@ -46,19 +47,18 @@ class EatViewController: UIViewController {
         let contentText: String = content.text ?? ""
         
         // 数が全て入っていない場合は、エラーを表示する
-        if  genreText.isEmpty || contentText.isEmpty {
-            alertShow(title: "エラー", content: "すべての入力が終わると登録ができます！")
+        if Method.empty(genreText) && Method.empty(contentText) {
+            Alert.show(title: "エラー", content: "すべての入力が終わると登録ができます！", viewController: self)
         } else {
-            let calNum = 100 // カロリー計算をつくる
-            let eatData = EatData(type: typeText,genre: genreText, content: contentText, cal: calNum)
+            let calNum = calEatData[String(genreRow)]![contentRow]
+            let eatData = EatData(type: typeText,genre: genreText, content: contentText, cal: Double(calNum))
             
-            if !DataManager.update(key: keyFromNowDate(), eat: eatData, run: nil) {
-                alertShow(title: "エラー", content: "書き込みエラーが発生しました。")
+            if !DataManager.update(key: key, eat: eatData, run: nil, task: nil) {
+                Alert.show(title: "エラー", content: "書き込みエラーが発生しました。", viewController: self)
                 return
             }
             updateEatTable()
-            inputInit()
-            alertShow(title: "食事を記録しました", content: "食事の記録の記録に成功しました！！")
+            initInput()
         }
     }
     
@@ -71,30 +71,18 @@ class EatViewController: UIViewController {
     }
     
     // 入力内容初期化
-    func inputInit() {
+    private func initInput() {
         genre.text = ""
         content.text = ""
     }
     
-    // keyになる今日の日付を日付を返す
-    func keyFromNowDate() -> String {
-        let f = DateFormatter()
-        f.dateStyle = .medium
-        f.timeStyle = .none
-        f.locale = Locale(identifier: "ja_JP")
-        let now = Date()
-        let nowMixString = f.string(from: now)
-        let nowSplitNum = (nowMixString.components(separatedBy: NSCharacterSet.decimalDigits.inverted)).joined()
-        return nowSplitNum
-    }
-    
-    // アラートを表示
-    func alertShow(title: String, content: String) {
-        let alert = UIAlertController(title: title, message: content, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        present(alert, animated: true, completion: nil)
+    // テーブルの内容を更新
+    private func updateEatTable() {
+        eatViewData = []
+        let eatData = DataManager.get(key: key)?.eat ?? []
+        eatData.forEach{ eatViewData.append($0) }
+        eatViewData.reverse()
+        self.eatTable.reloadData()
     }
 }
 
@@ -106,39 +94,28 @@ extension EatViewController: UITableViewDataSource {
     
     // セルの中に表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EatTableViewCell", for: indexPath) as! EatTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EatTableViewCell", for: indexPath) as! CustomTableViewCell
         tableView.separatorInset = .zero
         
-        let typeAndContent = eatViewData[indexPath.row].content + " (" + eatViewData[indexPath.row].type + ")"
-        
-        cell.setup(typeAndContent: typeAndContent, cal: String(eatViewData[indexPath.row].cal))
+        let typeAndContent: String = eatViewData[indexPath.row].content + " （" + eatViewData[indexPath.row].type + "）"
+        let cal: String = String(ceil(eatViewData[indexPath.row].cal * 10) / 10) + " Kcal"
+        cell.setup(typeAndContent: typeAndContent, cal: cal)
         
         return cell
     }
     
     // セルの編集許可
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
-    {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    //スワイプしたセルを削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             eatViewData.remove(at: indexPath.row)
-            DataManager.delete(key: keyFromNowDate(), data: "eat", index: indexPath.row)
+            DataManager.delete(key: key, data: "eat", index: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
-    }
-    
-    func updateEatTable() {
-        eatViewData = []
-        let eatData = DataManager.get(key: keyFromNowDate())?.eat ?? []
-        for eat in eatData {
-            eatViewData.append(eat)
-        }
-        eatViewData.reverse()
-        self.eatTable.reloadData()
     }
 }
 
@@ -148,36 +125,38 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         return 1
     }
     
-    // 何個存在するか
+    // ドラムロールの行数
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == genrePickerView {
-            return genreData.count
+            return genreEatData.count
         } else {
-            return contentData.count
+            return contentEatData[String(genreRow)]!.count
         }
     }
     
-    // ドラムロールの行数
+    // 内容を入れていく
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == genrePickerView {
-            return genreData[row]
+            return genreEatData[row]
         } else {
-            return contentData[row]
+            return contentEatData[String(genreRow)]![row]
         }
     }
     
     // 選択した値を入手
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == genrePickerView {
-            genre.text = genreData[row]
+            genre.text = genreEatData[row]
+            genreRow = row
             controlPicerView()
         } else {
-            content.text = contentData[row]
+            content.text = contentEatData[String(genreRow)]![row]
+            contentRow = row
             controlPicerView()
         }
     }
     
-    func createPickerView() {
+    private func createPickerView() {
         genrePickerView.delegate = self
         contentPickerView.delegate = self
         genre.inputView = genrePickerView

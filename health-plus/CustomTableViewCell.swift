@@ -1,5 +1,5 @@
 //
-//  EatTableViewCell.swift
+//  CustomTableViewCell.swift
 //  health-plus
 //
 //  Created by Yo Higashida on 2021/03/01.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EatTableViewCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet var typeAndContentLabel: UILabel!
     @IBOutlet var calLabel: UILabel!

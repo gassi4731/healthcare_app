@@ -10,23 +10,25 @@ import Foundation
 struct HealthData: Codable {
     var eat: Array<EatData>?
     var run: Array<RunData>?
+    var finishTask: Array<Int> = []
 }
 
 struct EatData: Codable {
     let type: String
     let genre: String
     let content: String
-    let cal: Int
+    let cal: Double
 }
 
 struct RunData: Codable {
     let genre: String
     let content: String
     let time: Int
-    let cal: Int
+    let cal: Double
 }
 
-let genreData = ["基本メニュー", "和食", "洋食", "中華", "デザート/飲み物"]
+let taskData = ["同じ時間に起床した", "朝食を同じ時間に食べる", "昼食を同じ時間に食べる", "夕食を同じ時間に食べる", "夕食後のカフェインをとっていない", "今日階段をつかった", "合間にストレッチや筋力トレーニングをした", "350g以上野菜を食べた", "水分を十分に取った"]
+
 let genreEatData = ["基本メニュー", "和食", "洋食", "中華", "デザート/飲み物"]
 let contentEatData = [
     "0": ["ご飯1膳軽盛り（100g）", "ご飯1膳普通盛り（140g）", "ご飯1膳大盛り（240g）", "食パン1枚（6枚切り）", "食パン1枚（8枚切り）"],
