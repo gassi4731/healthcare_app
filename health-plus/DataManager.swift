@@ -21,10 +21,8 @@ class DataManager {
     }
     
     class func update(key: String, eat: EatData?, run: RunData?) -> Bool {
-        let jsonEncoder = JSONEncoder()
         var eatArray: Array<EatData>
         var runArray: Array<RunData>
-        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
         
         let registerData:HealthData = get(key: key) ?? HealthData(eat: nil, run: nil)
         
@@ -49,6 +47,31 @@ class DataManager {
             runArray.append(run!)
         }
         
+        return uploadDB(key: key, eatArray: eatArray, runArray: runArray)
+    }
+    
+    class func delete(key: String, data: String, index: Int) {
+        guard let registerData: HealthData = get(key: key) else {
+            return
+        }
+        let eatArray: Array<EatData> = registerData.eat ?? []
+        let runArray: Array<RunData> = registerData.run ?? []
+        
+        if data == "eat" {
+            var editData: Array<EatData> = registerData.eat!
+            editData.remove(at: index)
+            uploadDB(key: key, eatArray: editData, runArray: runArray)
+        } else if data == "run" {
+            var editData: Array<RunData> = registerData.run!
+            editData.remove(at: index)
+            uploadDB(key: key, eatArray: eatArray, runArray: editData)
+        }
+        return
+    }
+    
+    class func uploadDB(key: String, eatArray: Array<EatData>, runArray: Array<RunData>) -> Bool {
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
         // HealthDataに格納
         let updateData = HealthData(eat: eatArray, run: runArray)
         

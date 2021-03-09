@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		75AD47A925EB5AA7000B8DF1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */; };
 		75AD47AC25EB5AD4000B8DF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */; };
 		75B9EB9125F36C4700309480 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B9EB9025F36C4700309480 /* DataManager.swift */; };
+		75CD2E7025F71D89002FDD88 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD2E6F25F71D89002FDD88 /* Method.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		75AD47A825EB5AA7000B8DF1 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		75AD47AB25EB5AD4000B8DF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		75B9EB9025F36C4700309480 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		75CD2E6F25F71D89002FDD88 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		92AA2EBABB93D95E1DB3647A /* Pods-health-plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-health-plus.release.xcconfig"; path = "Target Support Files/Pods-health-plus/Pods-health-plus.release.xcconfig"; sourceTree = "<group>"; };
 		F0B791F854E3963C5CE6282A /* Pods_health_plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_health_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,7 +70,6 @@
 				43CBFB935EE4DF7A1197357E /* Pods-health-plus.debug.xcconfig */,
 				92AA2EBABB93D95E1DB3647A /* Pods-health-plus.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,6 +118,7 @@
 				7529381925EC7CBB00B268E7 /* EatTableViewCell.swift */,
 				75B9EB9025F36C4700309480 /* DataManager.swift */,
 				7545D76725F684B100BD64AD /* CustomUITextField.swift */,
+				75CD2E6F25F71D89002FDD88 /* Method.swift */,
 			);
 			path = "health-plus";
 			sourceTree = "<group>";
@@ -237,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75AD479225EB2700000B8DF1 /* ViewController.swift in Sources */,
+				75CD2E7025F71D89002FDD88 /* Method.swift in Sources */,
 				75AD47A625EB5A9E000B8DF1 /* EatViewController.swift in Sources */,
 				75AD47A325EB5402000B8DF1 /* TabBarController.swift in Sources */,
 				75AD478E25EB2700000B8DF1 /* AppDelegate.swift in Sources */,

@@ -24,7 +24,7 @@ class EatViewController: UIViewController {
     
     var eatViewData: Array<EatData> = []
     
-//    var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
+    //    var genreData = ["ご飯定食類", "めん類", "パン類", "菓子・デザート類", "ドリンク類", "単品料理"]
     var contentData = ["sample1", "sample2", "sample3"]
     var moreData = ["100", "200", "300"]
     
@@ -41,9 +41,6 @@ class EatViewController: UIViewController {
         contentPickerView.dataSource = self
         morePickerView.delegate = self
         morePickerView.dataSource = self
-        
-        eatViewData.append(EatData(type: "朝食", genre: "ごはん", content: "ごはん", more: "", cal: 100))
-        eatViewData.append(EatData(type: "昼食", genre: "うどん", content: "うどん", more: "", cal: 100))
         
         updateEatTable()
     }
@@ -125,12 +122,28 @@ extension EatViewController: UITableViewDataSource {
         return cell
     }
     
+    // セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
+    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            eatViewData.remove(at: indexPath.row)
+            DataManager.delete(key: keyFromNowDate(), data: "eat", index: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    
     func updateEatTable() {
         eatViewData = []
         let eatData = DataManager.get(key: keyFromNowDate())?.eat ?? []
         for eat in eatData {
             eatViewData.append(eat)
         }
+        eatViewData.reverse()
         self.eatTable.reloadData()
     }
 }
@@ -167,8 +180,10 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == genrePickerView {
             genre.text = genreData[row]
+            controlPicerView()
         } else if pickerView == contentPickerView {
             content.text = contentData[row]
+            controlPicerView()
         } else {
             more.text = moreData[row]
         }
@@ -182,6 +197,8 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         genre.inputView = genrePickerView
         content.inputView = contentPickerView
         more.inputView = morePickerView
+        content.isEnabled = false
+        more.isEnabled = false
         // toolbar
         let toolbar = UIToolbar()
         toolbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
@@ -202,5 +219,20 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         genre.endEditing(true)
         content.endEditing(true)
         more.endEditing(true)
+    }
+    
+    // 使えるか使えないかの制御
+    private func controlPicerView() {
+        if !Method.empty(genre.text) {
+            content.isEnabled = true
+        } else {
+            content.isEnabled = false
+        }
+        
+        if !Method.empty(genre.text) && !Method.empty(content.text) {
+            more.isEnabled = true
+        } else {
+            more.isEnabled = false
+        }
     }
 }

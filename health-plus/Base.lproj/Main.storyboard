@@ -94,30 +94,34 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="04A-cp-1ew" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="520" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3DZ-8N-6TG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-pJ-JBp" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ジャンルを選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-pJ-JBp" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="586" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tgc-WB-1aq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-m4-Fi0" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="運動内容を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-m4-Fi0" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="652" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zbf-Kb-wYt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9He-Rb-H5Z" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="さらに詳しくを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9He-Rb-H5Z" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="718" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5UG-Pt-I2L"/>
                                 </constraints>
@@ -195,19 +199,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdH-1l-i10">
-                                <rect key="frame" x="20" y="433" width="374" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UdH-1l-i10">
+                                <rect key="frame" x="20" y="350" width="374" height="443"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sVQ-nv-OVz">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sVQ-nv-OVz" id="wcD-YC-1n2">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhl-kp-IEf">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="314" height="21"/>
+                                                    <rect key="frame" x="20" y="11.333333333333336" width="314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -222,8 +226,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="🥳 今日のTodo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvd-Yw-UD3">
-                                <rect key="frame" x="20" y="377" width="374" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-4z-EAC">
+                                <rect key="frame" x="20" y="144" width="374" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GuC-q7-SGO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳 今日のTodo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvd-Yw-UD3">
+                                <rect key="frame" x="20" y="314" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -233,20 +244,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="swP-tf-U1M" firstAttribute="trailing" secondItem="p4Y-gU-lHz" secondAttribute="trailing" constant="20" id="8o6-AA-xQC"/>
+                            <constraint firstItem="jXZ-4z-EAC" firstAttribute="top" secondItem="p4Y-gU-lHz" secondAttribute="bottom" constant="15" id="9vI-hj-QOz"/>
                             <constraint firstItem="mvd-Yw-UD3" firstAttribute="leading" secondItem="1fi-bK-UsW" secondAttribute="leading" constant="20" id="Nhe-xv-eyE"/>
+                            <constraint firstItem="mvd-Yw-UD3" firstAttribute="top" secondItem="jXZ-4z-EAC" secondAttribute="bottom" constant="20" id="OWB-x3-BMq"/>
                             <constraint firstItem="p4Y-gU-lHz" firstAttribute="top" secondItem="swP-tf-U1M" secondAttribute="top" constant="20" id="Sgs-4I-WwY"/>
                             <constraint firstItem="p4Y-gU-lHz" firstAttribute="leading" secondItem="swP-tf-U1M" secondAttribute="leading" constant="20" id="UHT-CS-mqO"/>
+                            <constraint firstItem="jXZ-4z-EAC" firstAttribute="leading" secondItem="swP-tf-U1M" secondAttribute="leading" constant="20" id="W00-YV-rC6"/>
                             <constraint firstItem="UdH-1l-i10" firstAttribute="leading" secondItem="swP-tf-U1M" secondAttribute="leading" constant="20" id="XQK-Cr-4o6"/>
                             <constraint firstItem="swP-tf-U1M" firstAttribute="bottom" secondItem="UdH-1l-i10" secondAttribute="bottom" constant="20" id="dzJ-nV-WJo"/>
                             <constraint firstItem="UdH-1l-i10" firstAttribute="top" secondItem="mvd-Yw-UD3" secondAttribute="bottom" constant="15" id="mUf-l7-phM"/>
                             <constraint firstItem="swP-tf-U1M" firstAttribute="trailing" secondItem="mvd-Yw-UD3" secondAttribute="trailing" constant="20" id="oHo-8j-4X8"/>
                             <constraint firstItem="swP-tf-U1M" firstAttribute="trailing" secondItem="UdH-1l-i10" secondAttribute="trailing" constant="20" id="xSF-sG-NXP"/>
+                            <constraint firstItem="swP-tf-U1M" firstAttribute="trailing" secondItem="jXZ-4z-EAC" secondAttribute="trailing" constant="20" id="ySD-Qy-MGr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wh2-ch-ubM"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3354" y="-672"/>
+            <point key="canvasLocation" x="3353.6231884057975" y="-672.32142857142856"/>
         </scene>
         <!--Eat View Controller-->
         <scene sceneID="v6d-gT-RJS">
@@ -340,6 +355,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiS-Lj-5cl" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="590" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ldp-Op-dlG"/>
                                 </constraints>
@@ -348,6 +364,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ジャンルを選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn1-uV-k5Q" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="654" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6yf-Vy-aHa"/>
                                 </constraints>
@@ -368,6 +385,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="食事内容を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ReY-46-cqG" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="718" width="374" height="30"/>
+                                <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ERe-85-xwB"/>
                                 </constraints>
