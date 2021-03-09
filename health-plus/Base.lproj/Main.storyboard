@@ -323,7 +323,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-4z-EAC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXZ-4z-EAC" customClass="CombinedChartView" customModule="Charts">
                                 <rect key="frame" x="20" y="144" width="374" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -364,6 +364,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chartView" destination="jXZ-4z-EAC" id="ACi-XT-BQB"/>
                         <outlet property="taskTable" destination="UdH-1l-i10" id="quF-n2-AkU"/>
                     </connections>
                 </viewController>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Charts
 
 class DataManager {
     
@@ -14,7 +15,7 @@ class DataManager {
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let registerData = UserDefaults.standard.data(forKey: key),
               let decodeData = try? jsonDecoder.decode(HealthData.self, from: registerData)  else {
-            print("get return nil")
+//            print("get return nil")
             return nil
         }
         return decodeData
@@ -91,5 +92,68 @@ class DataManager {
         }
         UserDefaults.standard.set(encodeData, forKey: key)
         return true
+    }
+    
+    class func getMonthData() -> [ChartDataEntry] {
+//        var data: Array<Double> = []
+        let lastDat = monthLastDay()
+        
+        let entries = (1..<lastDat).map { (i) -> ChartDataEntry in
+            let key: String = String(getYear()) + String(format: "%02d", getMonth()) + String(format: "%02d", i)
+            
+            let registerData = get(key: key) ?? HealthData()
+            let eatData = registerData.eat
+            let runData = registerData.run
+            var eatCal: Double = 0
+            var runCal: Double = 0
+            
+            eatData?.forEach{ eatCal = eatCal + $0.cal }
+            runData?.forEach{ runCal = runCal + $0.cal }
+            return ChartDataEntry(x: Double(i), y: Double(eatCal - runCal))
+        }
+        
+        return entries
+        
+//        Array(1...lastDat).forEach{
+//            let key: String = String(getYear()) + String(format: "%02d", getMonth()) + String(format: "%02d", $0)
+//
+//            let registerData = get(key: key) ?? HealthData()
+//            let eatData = registerData.eat
+//            let runData = registerData.run
+//            var eatCal: Double = 0
+//            var runCal: Double = 0
+//
+//            eatData?.forEach{ eatCal = eatCal + $0.cal }
+//            runData?.forEach{ runCal = runCal + $0.cal }
+//            ChartDataEntry(x: &0, y: eatCal - runCal)
+//        }
+        
+//        return data
+    }
+    
+    class func getYear() -> Int {
+        let f = DateFormatter()
+        f.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy", options: 0, locale: Locale(identifier: "ja_JP"))
+        let year = f.string(from: Date())
+        return Int(year.prefix(4))!
+    }
+    
+    class func getMonth() -> Int {
+        let f = DateFormatter()
+        f.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM", options: 0, locale: Locale(identifier: "ja_JP"))
+        let month = f.string(from: Date())
+        return Int(month.prefix(2)) ?? 1
+    }
+    
+    class func monthLastDay() -> Int {
+        let calender = Calendar(identifier: .gregorian)
+        var components = DateComponents()
+        components.year = getYear()
+        components.month = getMonth() + 1
+        components.day = 0
+        let date = calender.date(from: components)!
+        let dayCount = calender.component(.day, from: date)
+        
+        return dayCount
     }
 }
