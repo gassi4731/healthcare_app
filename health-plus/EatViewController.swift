@@ -14,11 +14,9 @@ class EatViewController: UIViewController {
     @IBOutlet weak var type: UISegmentedControl!
     @IBOutlet weak var genre: UITextField!
     @IBOutlet weak var content: UITextField!
-    @IBOutlet weak var more: UITextField!
     
     var genrePickerView = UIPickerView()
     var contentPickerView = UIPickerView()
-    var morePickerView = UIPickerView()
     
     var typeText: String = "朝食"
     
@@ -39,8 +37,6 @@ class EatViewController: UIViewController {
         genrePickerView.dataSource = self
         contentPickerView.delegate = self
         contentPickerView.dataSource = self
-        morePickerView.delegate = self
-        morePickerView.dataSource = self
         
         updateEatTable()
     }
@@ -48,14 +44,13 @@ class EatViewController: UIViewController {
     @IBAction func register() {
         let genreText: String = genre.text ?? ""
         let contentText: String = content.text ?? ""
-        let moreText: String = more.text ?? ""
         
         // 数が全て入っていない場合は、エラーを表示する
-        if  genreText.isEmpty || contentText.isEmpty || moreText.isEmpty {
+        if  genreText.isEmpty || contentText.isEmpty {
             alertShow(title: "エラー", content: "すべての入力が終わると登録ができます！")
         } else {
             let calNum = 100 // カロリー計算をつくる
-            let eatData = EatData(type: typeText,genre: genreText, content: contentText, more: moreText, cal: calNum)
+            let eatData = EatData(type: typeText,genre: genreText, content: contentText, cal: calNum)
             
             if !DataManager.update(key: keyFromNowDate(), eat: eatData, run: nil) {
                 alertShow(title: "エラー", content: "書き込みエラーが発生しました。")
@@ -79,7 +74,6 @@ class EatViewController: UIViewController {
     func inputInit() {
         genre.text = ""
         content.text = ""
-        more.text = ""
     }
     
     // keyになる今日の日付を日付を返す
@@ -158,10 +152,8 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == genrePickerView {
             return genreData.count
-        } else if pickerView == contentPickerView {
-            return contentData.count
         } else {
-            return moreData.count
+            return contentData.count
         }
     }
     
@@ -169,10 +161,8 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == genrePickerView {
             return genreData[row]
-        } else if pickerView == contentPickerView {
-            return contentData[row]
         } else {
-            return moreData[row]
+            return contentData[row]
         }
     }
     
@@ -181,24 +171,18 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         if pickerView == genrePickerView {
             genre.text = genreData[row]
             controlPicerView()
-        } else if pickerView == contentPickerView {
+        } else {
             content.text = contentData[row]
             controlPicerView()
-        } else {
-            more.text = moreData[row]
         }
-        
     }
     
     func createPickerView() {
         genrePickerView.delegate = self
         contentPickerView.delegate = self
-        morePickerView.delegate = self
         genre.inputView = genrePickerView
         content.inputView = contentPickerView
-        more.inputView = morePickerView
         content.isEnabled = false
-        more.isEnabled = false
         // toolbar
         let toolbar = UIToolbar()
         toolbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
@@ -206,19 +190,16 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         toolbar.setItems([doneButtonItem], animated: true)
         genre.inputAccessoryView = toolbar
         content.inputAccessoryView = toolbar
-        more.inputAccessoryView = toolbar
     }
     
     @objc func donePicker() {
         genre.endEditing(true)
         content.endEditing(true)
-        more.endEditing(true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         genre.endEditing(true)
         content.endEditing(true)
-        more.endEditing(true)
     }
     
     // 使えるか使えないかの制御
@@ -227,12 +208,6 @@ extension EatViewController: UIPickerViewDelegate, UIPickerViewDataSource{
             content.isEnabled = true
         } else {
             content.isEnabled = false
-        }
-        
-        if !Method.empty(genre.text) && !Method.empty(content.text) {
-            more.isEnabled = true
-        } else {
-            more.isEnabled = false
         }
     }
 }

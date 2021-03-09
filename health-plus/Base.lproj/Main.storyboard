@@ -25,7 +25,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akz-kz-BHV">
-                                <rect key="frame" x="20" y="133.33333333333334" width="374" height="290.66666666666663"/>
+                                <rect key="frame" x="20" y="133.33333333333334" width="374" height="356.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NFE-NI-6z8">
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HM-E0-pLv">
-                                <rect key="frame" x="20" y="499.33333333333331" width="374" height="15.666666666666686"/>
+                                <rect key="frame" x="20" y="565.33333333333337" width="374" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,20 +80,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="さらに詳しく" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-n6-fCD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="運動内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-Cn-k4z">
                                 <rect key="frame" x="20" y="631" width="374" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="運動内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHR-Cn-k4z">
-                                <rect key="frame" x="20" y="565" width="374" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="04A-cp-1ew" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
-                                <rect key="frame" x="20" y="520" width="374" height="30"/>
+                                <rect key="frame" x="20" y="586" width="374" height="30"/>
                                 <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3DZ-8N-6TG"/>
@@ -102,19 +96,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ジャンルを選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-pJ-JBp" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
-                                <rect key="frame" x="20" y="586" width="374" height="30"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Tgc-WB-1aq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="運動内容を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-m4-Fi0" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
                                 <rect key="frame" x="20" y="652" width="374" height="30"/>
                                 <color key="tintColor" name="MainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="zbf-Kb-wYt"/>
+                                    <constraint firstAttribute="height" constant="30" id="Tgc-WB-1aq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -129,7 +114,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📝 記録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOH-k9-gVE">
-                                <rect key="frame" x="20" y="464" width="374" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="530" width="374" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -138,19 +123,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ndi-n6-fCD" firstAttribute="top" secondItem="qtP-pJ-JBp" secondAttribute="bottom" constant="15" id="05v-eo-m3R"/>
                             <constraint firstItem="EBO-NI-0BM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6AH-oY-Plo"/>
                             <constraint firstItem="MHR-Cn-k4z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Tu-mo-roa"/>
                             <constraint firstItem="04A-cp-1ew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8RS-iQ-pYU"/>
                             <constraint firstItem="1HM-E0-pLv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9VO-U5-v3d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pUO-WW-Kkv" secondAttribute="trailing" constant="20" id="A7Z-GP-FCJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9He-Rb-H5Z" secondAttribute="trailing" constant="20" id="Ap3-WQ-qyY"/>
-                            <constraint firstItem="BCE-m4-Fi0" firstAttribute="top" secondItem="Ndi-n6-fCD" secondAttribute="bottom" constant="5" id="Bdu-uV-MXF"/>
                             <constraint firstItem="pUO-WW-Kkv" firstAttribute="top" secondItem="9He-Rb-H5Z" secondAttribute="bottom" constant="15" id="CgS-MC-xAj"/>
                             <constraint firstItem="OOH-k9-gVE" firstAttribute="top" secondItem="akz-kz-BHV" secondAttribute="bottom" constant="40" id="DWB-3b-aTJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ujY-Rs-VRG" secondAttribute="trailing" constant="20" id="ELM-4m-k2I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ndi-n6-fCD" secondAttribute="trailing" constant="20" id="FEs-z8-9xc"/>
-                            <constraint firstItem="Ndi-n6-fCD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HJx-Qo-dhS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="04A-cp-1ew" secondAttribute="trailing" constant="20" id="IWj-cE-gDR"/>
                             <constraint firstItem="OOH-k9-gVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Iqi-80-pkE"/>
                             <constraint firstItem="04A-cp-1ew" firstAttribute="top" secondItem="1HM-E0-pLv" secondAttribute="bottom" constant="5" id="JgC-Gh-OzJ"/>
@@ -159,9 +140,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="akz-kz-BHV" secondAttribute="trailing" constant="20" id="O9D-OD-KY3"/>
                             <constraint firstItem="akz-kz-BHV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P0S-3L-kCh"/>
                             <constraint firstItem="qtP-pJ-JBp" firstAttribute="top" secondItem="MHR-Cn-k4z" secondAttribute="bottom" constant="5" id="PhH-9J-XcI"/>
-                            <constraint firstItem="BCE-m4-Fi0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pzk-9b-xFT"/>
-                            <constraint firstItem="ujY-Rs-VRG" firstAttribute="top" secondItem="BCE-m4-Fi0" secondAttribute="bottom" constant="15" id="Rcy-QX-cxd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BCE-m4-Fi0" secondAttribute="trailing" constant="20" id="Sr3-Ji-MPs"/>
                             <constraint firstItem="ujY-Rs-VRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wgs-iY-PIg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1HM-E0-pLv" secondAttribute="trailing" constant="20" id="XEc-z2-ij6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHR-Cn-k4z" secondAttribute="trailing" constant="20" id="Za5-PN-wDN"/>
@@ -173,6 +151,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OOH-k9-gVE" secondAttribute="trailing" constant="20" id="oh0-rw-4Es"/>
                             <constraint firstItem="1HM-E0-pLv" firstAttribute="top" secondItem="OOH-k9-gVE" secondAttribute="bottom" constant="15" id="qh0-iW-UM5"/>
                             <constraint firstItem="akz-kz-BHV" firstAttribute="top" secondItem="EBO-NI-0BM" secondAttribute="bottom" constant="5" id="svm-UM-hrg"/>
+                            <constraint firstItem="ujY-Rs-VRG" firstAttribute="top" secondItem="qtP-pJ-JBp" secondAttribute="bottom" constant="15" id="vuO-v3-gnr"/>
                             <constraint firstItem="pUO-WW-Kkv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wdl-06-sDS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pUO-WW-Kkv" secondAttribute="bottom" constant="20" id="wuH-ug-vty"/>
                             <constraint firstItem="pUO-WW-Kkv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zFo-1X-BFl"/>
@@ -187,7 +166,6 @@
         <!--Home View Controller-->
         <scene sceneID="Bja-eJ-eVv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtx-aZ-LbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="b8F-Z2-Uum" customClass="HomeViewController" customModule="health_plus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1fi-bK-UsW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -260,6 +238,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wh2-ch-ubM"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtx-aZ-LbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3353.6231884057975" y="-672.32142857142856"/>
         </scene>
@@ -278,7 +257,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wAG-g8-oZf">
-                                <rect key="frame" x="20" y="525.33333333333337" width="374" height="32"/>
+                                <rect key="frame" x="20" y="584.33333333333337" width="374" height="32"/>
                                 <segments>
                                     <segment title="朝食"/>
                                     <segment title="昼食"/>
@@ -300,7 +279,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvW-DF-ijX">
-                                <rect key="frame" x="20" y="133.99999999999997" width="374" height="320.33333333333326"/>
+                                <rect key="frame" x="20" y="133.99999999999997" width="374" height="379.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EatTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EatTableViewCell" id="LOp-jt-BJ8" customClass="EatTableViewCell" customModule="health_plus" customModuleProvider="target">
@@ -342,19 +321,19 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📝 記録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-Qg-RNr">
-                                <rect key="frame" x="20" y="494.33333333333331" width="374" height="20.999999999999943"/>
+                                <rect key="frame" x="20" y="553.33333333333337" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-0p-M6P">
-                                <rect key="frame" x="20.000000000000004" y="571.33333333333337" width="53.333333333333343" height="15.666666666666629"/>
+                                <rect key="frame" x="20.000000000000004" y="630.33333333333337" width="53.333333333333343" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiS-Lj-5cl" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
-                                <rect key="frame" x="20" y="590" width="374" height="30"/>
+                                <rect key="frame" x="20" y="649" width="374" height="30"/>
                                 <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ldp-Op-dlG"/>
@@ -363,7 +342,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ジャンルを選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn1-uV-k5Q" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
-                                <rect key="frame" x="20" y="654" width="374" height="30"/>
+                                <rect key="frame" x="20" y="713" width="374" height="30"/>
                                 <color key="tintColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6yf-Vy-aHa"/>
@@ -372,26 +351,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食事内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-xH-YuJ">
-                                <rect key="frame" x="20" y="635" width="374" height="16"/>
+                                <rect key="frame" x="20" y="694" width="374" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もっと詳しく" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-MM-y9x">
-                                <rect key="frame" x="20" y="699" width="374" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="食事内容を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ReY-46-cqG" customClass="CustomUITextField" customModule="health_plus" customModuleProvider="target">
-                                <rect key="frame" x="20" y="718" width="374" height="30"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ERe-85-xwB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Caa-d1-4Fj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -402,9 +366,8 @@
                             <constraint firstItem="VVw-Hn-68p" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="7uh-Tw-gnQ"/>
                             <constraint firstItem="gn1-uV-k5Q" firstAttribute="top" secondItem="nuV-xH-YuJ" secondAttribute="bottom" constant="3" id="9Vq-jc-S4M"/>
                             <constraint firstItem="aD6-Qg-RNr" firstAttribute="top" secondItem="dvW-DF-ijX" secondAttribute="bottom" constant="40" id="Dba-Rr-66V"/>
-                            <constraint firstItem="r1c-MM-y9x" firstAttribute="top" secondItem="gn1-uV-k5Q" secondAttribute="bottom" constant="15" id="ENM-43-hZP"/>
+                            <constraint firstItem="dAZ-pg-Nxv" firstAttribute="top" secondItem="gn1-uV-k5Q" secondAttribute="bottom" constant="20" id="DlM-un-zap"/>
                             <constraint firstItem="dvW-DF-ijX" firstAttribute="top" secondItem="VVw-Hn-68p" secondAttribute="bottom" constant="5" id="HFo-ab-2p8"/>
-                            <constraint firstItem="r1c-MM-y9x" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="Hva-ZH-VDF"/>
                             <constraint firstItem="1ey-0p-M6P" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="MX3-sn-fzc"/>
                             <constraint firstItem="dAZ-pg-Nxv" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="O2U-y3-OY4"/>
                             <constraint firstItem="dvW-DF-ijX" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="OKK-og-boz"/>
@@ -414,20 +377,15 @@
                             <constraint firstItem="1ey-0p-M6P" firstAttribute="top" secondItem="wAG-g8-oZf" secondAttribute="bottom" constant="15" id="RtG-N0-G7o"/>
                             <constraint firstItem="wAG-g8-oZf" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="SOs-Rs-odP"/>
                             <constraint firstItem="nuV-xH-YuJ" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="SYZ-da-wB3"/>
-                            <constraint firstItem="dAZ-pg-Nxv" firstAttribute="top" secondItem="ReY-46-cqG" secondAttribute="bottom" constant="15" id="aDO-a0-1MC"/>
                             <constraint firstItem="Caa-d1-4Fj" firstAttribute="trailing" secondItem="wAG-g8-oZf" secondAttribute="trailing" constant="20" id="aWU-mx-uvr"/>
                             <constraint firstItem="gn1-uV-k5Q" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="bBm-UC-N3K"/>
                             <constraint firstItem="Caa-d1-4Fj" firstAttribute="trailing" secondItem="dvW-DF-ijX" secondAttribute="trailing" constant="20" id="bUK-69-ZyU"/>
-                            <constraint firstItem="ReY-46-cqG" firstAttribute="top" secondItem="r1c-MM-y9x" secondAttribute="bottom" constant="3" id="cdJ-uL-saF"/>
-                            <constraint firstItem="ReY-46-cqG" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="cij-8Z-hSN"/>
                             <constraint firstItem="Caa-d1-4Fj" firstAttribute="trailing" secondItem="gn1-uV-k5Q" secondAttribute="trailing" constant="20" id="fRp-jm-O2G"/>
                             <constraint firstItem="tiS-Lj-5cl" firstAttribute="top" secondItem="1ey-0p-M6P" secondAttribute="bottom" constant="3" id="fUY-Ra-aLD"/>
                             <constraint firstItem="Caa-d1-4Fj" firstAttribute="bottom" secondItem="dAZ-pg-Nxv" secondAttribute="bottom" constant="20" id="ff5-Dh-5aE"/>
                             <constraint firstItem="nuV-xH-YuJ" firstAttribute="top" secondItem="tiS-Lj-5cl" secondAttribute="bottom" constant="15" id="gk6-hX-JsV"/>
                             <constraint firstAttribute="trailing" secondItem="tiS-Lj-5cl" secondAttribute="trailing" constant="20" id="m6F-EE-k79"/>
                             <constraint firstItem="aD6-Qg-RNr" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="tS8-FE-GEN"/>
-                            <constraint firstItem="Caa-d1-4Fj" firstAttribute="trailing" secondItem="ReY-46-cqG" secondAttribute="trailing" constant="20" id="trE-8A-7Xv"/>
-                            <constraint firstItem="Caa-d1-4Fj" firstAttribute="trailing" secondItem="r1c-MM-y9x" secondAttribute="trailing" constant="20" id="xe3-4S-khf"/>
                             <constraint firstItem="tiS-Lj-5cl" firstAttribute="leading" secondItem="Caa-d1-4Fj" secondAttribute="leading" constant="20" id="zCn-RK-Dr2"/>
                         </constraints>
                     </view>
@@ -436,7 +394,6 @@
                         <outlet property="content" destination="gn1-uV-k5Q" id="b1r-Ck-Hnk"/>
                         <outlet property="eatTable" destination="dvW-DF-ijX" id="1FH-LR-EId"/>
                         <outlet property="genre" destination="tiS-Lj-5cl" id="hGi-23-Oap"/>
-                        <outlet property="more" destination="ReY-46-cqG" id="McO-yX-YtD"/>
                         <outlet property="type" destination="wAG-g8-oZf" id="Epo-tz-ysq"/>
                     </connections>
                 </viewController>
