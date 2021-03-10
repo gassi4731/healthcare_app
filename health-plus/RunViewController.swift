@@ -22,7 +22,7 @@ class RunViewController: UIViewController {
     var runViewData: Array<RunData> = []
     var genreRow: Int!
     var contentRow: Int!
-    var weight: Int = 45
+    var weight: Double = 45
     
     // 今日の日付をKeyにする
     let key: String = Method.keyFromNowDate()
@@ -40,7 +40,7 @@ class RunViewController: UIViewController {
         contentPickerVIew.delegate = self
         contentPickerVIew.dataSource = self
         
-        weight = UserDefaults.standard.integer(forKey: "weight") as Int
+        weight = UserDefaults.standard.double(forKey: "weight")
     }
     
     @IBAction func register() {
@@ -52,7 +52,7 @@ class RunViewController: UIViewController {
         if Method.empty(genreText) && Method.empty(contentText) && Method.empty(timeText) {
             Alert.show(title: "エラー", content: "すべての入力が終わると登録ができます！", viewController: self)
         } else {
-            let calNum: Double = calRunData[String(genreRow)]![contentRow] * Double(timeText)!
+            let calNum: Double = calRunData[String(genreRow)]![contentRow] * Double(timeText)! * weight
             let runData = RunData(genre: genreText, content: contentText, time: Int(timeText)!, cal: calNum)
             if !DataManager.update(key: key, eat: nil, run: runData, task: nil) {
                 Alert.show(title: "エラー", content: "書き込みエラーが発生しました。", viewController: self)

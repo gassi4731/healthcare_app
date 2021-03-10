@@ -109,7 +109,9 @@ class DataManager {
             
             eatData?.forEach{ eatCal = eatCal + $0.cal }
             runData?.forEach{ runCal = runCal + $0.cal }
-            return ChartDataEntry(x: Double(i), y: Double(eatCal - runCal))
+            let diff: Double = eatCal - runCal
+            print(diff)
+            return ChartDataEntry(x: Double(i), y: diff)
         }
         
         return entries
