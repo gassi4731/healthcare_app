@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.integer(forKey: "weight") == 0 {
             UserDefaults.standard.set(45, forKey: "weight")
         }
+        
+        // Todoのデフォルト設定
+        if UserDefaults.standard.array(forKey: "task") == nil {
+            UserDefaults.standard.set(taskData, forKey: "task")
+        }
         return true
     }
 
