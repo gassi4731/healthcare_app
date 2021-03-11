@@ -31,7 +31,9 @@ class SettingViewController: UIViewController {
     
     @IBAction func save() {
         let weightText = weight.text ?? ""
-        if weightText.isAlphanumeric() {
+        if weightText == "0" {
+            Alert.show(title: "体重0kg!?", content: "本当にその体重ですか...", viewController: self)
+        } else if weightText.isAlphanumeric() {
             UserDefaults.standard.set(Int(weightText), forKey: "weight")
             self.dismiss(animated: true, completion: nil)
         } else {

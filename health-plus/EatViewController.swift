@@ -74,6 +74,7 @@ class EatViewController: UIViewController {
     private func initInput() {
         genre.text = ""
         content.text = ""
+        content.isEnabled = false
     }
     
     // テーブルの内容を更新

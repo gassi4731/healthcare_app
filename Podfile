@@ -6,6 +6,5 @@ target 'health-plus' do
   use_frameworks!
 
   # Pods for health-plus
-  pod 'SwipeableTabBarController'
   pod 'Charts'
 end

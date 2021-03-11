@@ -41,15 +41,26 @@ class RunViewController: UIViewController {
         contentPickerVIew.dataSource = self
         
         weight = UserDefaults.standard.double(forKey: "weight")
+        self.time.keyboardType = UIKeyboardType.numberPad
+        // toolbar
+        let toolbar = UIToolbar()
+        toolbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(SettingViewController.donePad))
+        toolbar.setItems([doneButtonItem], animated: true)
+        time.inputAccessoryView = toolbar
+    }
+    
+    @objc func donePad() {
+        time.endEditing(true)
     }
     
     @IBAction func register() {
         let genreText: String = genre.text ?? ""
         let contentText: String = content.text ?? ""
-        let timeText: String = time.text ?? ""
+        let timeText: String = time.text ?? "0"
         
         // 数が入っていない場合は、エラーを表示する
-        if Method.empty(genreText) && Method.empty(contentText) && Method.empty(timeText) {
+        if Method.empty(genreText) && Method.empty(contentText) && timeText != "0" {
             Alert.show(title: "エラー", content: "すべての入力が終わると登録ができます！", viewController: self)
         } else {
             let calNum: Double = calRunData[String(genreRow)]![contentRow] * Double(timeText)! * weight
@@ -68,6 +79,8 @@ class RunViewController: UIViewController {
         genre.text = ""
         content.text = ""
         time.text = ""
+        content.isEnabled = false
+        time.isEnabled = false
     }
     
     // テーブルの内容を更新
@@ -175,6 +188,7 @@ extension RunViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         genre.endEditing(true)
         content.endEditing(true)
+        time.endEditing(true)
     }
     
     // 使えるか使えないかの制御
