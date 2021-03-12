@@ -229,17 +229,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📗 カロリーデータの出典元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxx-Ze-BLr">
+                                <rect key="frame" x="20" y="197" width="218" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-kR-bmL">
+                                <rect key="frame" x="20" y="223" width="276" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="hLe-pJ-RlF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="消費カロリー…エクササイズと食事の最新知識"/>
+                                <connections>
+                                    <action selector="runCal" destination="1Bk-iD-lM8" eventType="touchUpInside" id="mfI-GS-KV2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-qQ-o37">
+                                <rect key="frame" x="20" y="248" width="263" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="OgY-sT-noX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="摂取カロリー…毎日の食事のカロリーガイド"/>
+                                <connections>
+                                    <action selector="eatCal" destination="1Bk-iD-lM8" eventType="touchUpInside" id="vws-oQ-aqi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JBu-Qv-fWj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JBu-Qv-fWj" firstAttribute="trailing" secondItem="jZQ-9Y-FvY" secondAttribute="trailing" constant="20" id="2J0-lk-3as"/>
+                            <constraint firstItem="fdZ-kR-bmL" firstAttribute="top" secondItem="wxx-Ze-BLr" secondAttribute="bottom" constant="5" id="7J6-l0-aCS"/>
+                            <constraint firstItem="QvX-qQ-o37" firstAttribute="top" secondItem="fdZ-kR-bmL" secondAttribute="bottom" constant="5" id="8Jy-oc-Akg"/>
                             <constraint firstItem="jZQ-9Y-FvY" firstAttribute="leading" secondItem="JBu-Qv-fWj" secondAttribute="leading" constant="20" id="8x6-bK-8r1"/>
                             <constraint firstItem="ewE-jK-Smj" firstAttribute="top" secondItem="I6W-0f-1S3" secondAttribute="bottom" constant="5" id="C9C-03-szB"/>
+                            <constraint firstItem="fdZ-kR-bmL" firstAttribute="leading" secondItem="JBu-Qv-fWj" secondAttribute="leading" constant="20" id="HLH-Kn-fkw"/>
                             <constraint firstItem="JBu-Qv-fWj" firstAttribute="trailing" secondItem="cRD-SU-fHd" secondAttribute="trailing" constant="20" id="Ljs-Th-DZU"/>
                             <constraint firstItem="I6W-0f-1S3" firstAttribute="top" secondItem="cRD-SU-fHd" secondAttribute="bottom" constant="5" id="MLE-k8-fQp"/>
+                            <constraint firstItem="wxx-Ze-BLr" firstAttribute="top" secondItem="ewE-jK-Smj" secondAttribute="bottom" constant="40" id="VBo-pE-0AI"/>
                             <constraint firstItem="JBu-Qv-fWj" firstAttribute="trailing" secondItem="ewE-jK-Smj" secondAttribute="trailing" constant="20" id="VPH-49-EEI"/>
                             <constraint firstItem="ewE-jK-Smj" firstAttribute="leading" secondItem="JBu-Qv-fWj" secondAttribute="leading" constant="20" id="W0x-nz-hpU"/>
+                            <constraint firstItem="wxx-Ze-BLr" firstAttribute="leading" secondItem="JBu-Qv-fWj" secondAttribute="leading" constant="20" id="frM-Su-g1f"/>
+                            <constraint firstItem="QvX-qQ-o37" firstAttribute="leading" secondItem="JBu-Qv-fWj" secondAttribute="leading" constant="20" id="i8b-Sp-cTO"/>
                             <constraint firstItem="JBu-Qv-fWj" firstAttribute="trailing" secondItem="I6W-0f-1S3" secondAttribute="trailing" constant="20" id="iCv-M9-W0a"/>
                             <constraint firstItem="ahK-Ls-WOD" firstAttribute="centerY" secondItem="I6W-0f-1S3" secondAttribute="centerY" id="lrn-zz-mUp"/>
                             <constraint firstItem="cRD-SU-fHd" firstAttribute="top" secondItem="JBu-Qv-fWj" secondAttribute="top" constant="20" id="mrT-zw-98v"/>

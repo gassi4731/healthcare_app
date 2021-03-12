@@ -41,6 +41,16 @@ class SettingViewController: UIViewController {
         }
     }
     
+    @IBAction func runCal() {
+        let url = URL(string: "https://amzn.to/2Nac987")
+        UIApplication.shared.open(url!)
+    }
+    
+    @IBAction func eatCal() {
+        let url = URL(string: "https://amzn.to/38vnQhm")
+        UIApplication.shared.open(url!)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // キーボードを閉じる
         weight.endEditing(true)
